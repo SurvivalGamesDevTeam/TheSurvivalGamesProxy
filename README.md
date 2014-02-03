@@ -8,4 +8,5 @@ This will allow you to run one SG instance across a network of CB servers, with 
 
 It will integrate into the SurvivalGames plugin as a config option "BungeecordMode: true" 
 
-@AgentTroll can you set up CI please and thank you.
+~~@AgentTroll can you set up CI please and thank you.~~
+I can't seem to find a Mave repo for Bungeecord... well until I do, no CI
