@@ -27,7 +27,7 @@ public class SGServerList {
 		return servers;
 	}
 
-	public void setServer(int serverID, ServerStatus stat) {
+	public void reportServerStatus(int serverID, ServerStatus stat) {
 
 	}
 }
