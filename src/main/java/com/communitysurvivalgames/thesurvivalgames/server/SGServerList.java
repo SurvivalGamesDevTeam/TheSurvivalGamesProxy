@@ -9,6 +9,7 @@ import net.md_5.bungee.api.config.ServerInfo;
 public class SGServerList {
 	private static SGServerList sgServerList = new SGServerList();
 	private Map<ServerInfo, ServerStatus> servers = new HashMap<ServerInfo, ServerStatus>();
+	private ServerInfo hubServer;
 
 	public static SGServerList getServerList() {
 		return sgServerList;
@@ -20,6 +21,10 @@ public class SGServerList {
 			if (sinfo.getName().startsWith("sg_")) {
 				servers.put(sinfo, ServerStatus.OFFLINE);
 			}
+
+			if (sinfo.getName().startsWith("hub_")) {
+				hubServer = sinfo;
+			}
 		}
 	}
 
@@ -27,7 +32,20 @@ public class SGServerList {
 		return servers;
 	}
 
-	public void reportServerStatus(int serverID, ServerStatus stat) {
+	public ServerStatus getServerStatus(String serverName) {
+		return servers.get(ProxyServer.getInstance().getServers().get(serverName));
+	}
+	
+	public ServerStatus getServerStatus(ServerInfo sinfo) {
+		return servers.get(sinfo);
 
+	}
+
+	public void reportServerStatus(String serverName, ServerStatus stat) {
+
+	}
+
+	public ServerInfo getHubServer() {
+		return hubServer;
 	}
 }
