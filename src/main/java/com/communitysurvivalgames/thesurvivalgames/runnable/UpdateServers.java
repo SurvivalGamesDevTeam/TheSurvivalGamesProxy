@@ -21,7 +21,9 @@ public class UpdateServers implements Runnable {
 				out.writeInt(sinfo.getPlayers().size());
 			} catch (IOException e) {
 				continue;
-			}	
+			}
+			
+			sinfo.sendData("SGUpdate", bytes.toByteArray());
 		}
 	}
 }
